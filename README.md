@@ -21,11 +21,8 @@ O script grava os dados no Banco de Dados MySQL.
 Vamos rodar o script para fazer o scraping para obter dados de imóveis á venda e alugados na cidade de São Paulo:
 #### Para rodar o script:
 
-Antes de rodar o script é preciso colocar suas credencias do banco de dados no script:
-```
-cd scrapping/imoveis/imoveis/pipelines.py
-```
-
+Antes de rodar o script é preciso colocar suas credencias do banco de dados no script do pipeline:
+<a href='https://github.com/SMarkus27/Projeto_Imoveis_SP/blob/main/imoveis/pipelines.py'>Arquivo Pipeline</a>
 ```
 cd scrapping/imoveis
 ```
