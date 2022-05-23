@@ -22,9 +22,8 @@ Vamos rodar o script para fazer o scraping para obter dados de imóveis á venda
 #### Para rodar o script:
 
 Antes de rodar o script é preciso colocar suas credencias do banco de dados no script do pipeline:<br>
-```
-<a href='https://github.com/SMarkus27/Projeto_Imoveis_SP/blob/main/imoveis/pipelines.py'>Arquivo Pipeline</a>
-```
+<br>
+<a href='https://github.com/SMarkus27/Projeto_Imoveis_SP/blob/main/imoveis/pipelines.py'>Arquivo Pipeline</a><br>
 ```
 cd scrapping/imoveis
 ```
