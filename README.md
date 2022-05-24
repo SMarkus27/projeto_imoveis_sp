@@ -64,3 +64,6 @@ SET bedrooms = REPLACE(bedrooms,"ou mais",'')
 UPDATE olx_crawl
 SET garage = REPLACE(garage,"ou mais",'')
 ```
+
+## Parte 3 EDA(Exploratory Data Analysis):
+EM BREVE
