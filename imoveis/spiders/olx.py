@@ -33,7 +33,9 @@ class CourseraSpider(scrapy.Spider):
         bedrooms = response.xpath('//dt[contains(text(), "Quartos")]/following-sibling::a/text()').extract_first()
         garage = response.xpath('//dt[contains(text(), "Vagas na garagem")]/following-sibling::dd/text()').extract_first()
         condominium = response.xpath('//dt[contains(text(), "Condomínio")]/following-sibling::dd/text()').extract_first()
-        
+        district = response.xpath('//dt[contains(text(),"Bairro")]/following-sibling::dd/text()').extract_first()
+        city = response.xpath('//dt[contains(text(),"Município")]/following-sibling::dd/text()').extract_first()
+
         yield{
             'category': category,
             'iptu': iptu,
@@ -42,6 +44,8 @@ class CourseraSpider(scrapy.Spider):
             'size': size,
             'bedrooms': bedrooms,
             'garage': garage,
-            'condominium': condominium
+            'condominium': condominium,
+            'district': district,
+            'city': city
 
         }
