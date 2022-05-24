@@ -28,7 +28,10 @@ class OlxPipeline(object):
                         size text,
                         bedrooms text,
                         garage text,
-                        condominium text
+                        condominium text,
+                        district text,
+                        city text
+
                         )""")
 
     def process_item(self, item, spider):
@@ -37,7 +40,7 @@ class OlxPipeline(object):
 
 
     def store_db(self, item):
-        self.curr.execute(f"""INSERT INTO olx_crawl VALUES(%s,%s,%s,%s,%s,%s,%s,%s)""",list((
+        self.curr.execute(f"""INSERT INTO olx_crawl VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)""",list((
             item['category'],
             item['iptu'],
             item['bathrooms'],
@@ -46,6 +49,9 @@ class OlxPipeline(object):
             item['bedrooms'],
             item['garage'],
             item['condominium'],
+            item['district'],
+            item['city'],
+
 
                 ))
         )
