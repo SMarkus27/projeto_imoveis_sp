@@ -31,4 +31,9 @@ cd scrapping/imoveis
 python -m scrapy crawl olx
 ```
 ## Parte 2 Tratamento dos Dados:
-Em breve
+Abaixo teremos os comandos SQL realizados para o tratamento dos dados, poderia ter usado o python para realizar esse tratamento, mas vamos deixar o python para ser usado no EDA dos dados. 
+* Vamos manter somente os dados relacionados com Apartamentos e Casas:
+```
+DELETE FROM olx_crawl
+WHERE olx_crawl.category not in ('Apartamentos', 'Casas')
+```
