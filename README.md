@@ -64,6 +64,31 @@ SET bedrooms = REPLACE(bedrooms,"ou mais",'')
 UPDATE olx_crawl
 SET garage = REPLACE(garage,"ou mais",'')
 ```
+* Removendo valores null das colunas IPTU, bathrooms, size, bedrooms, garage e condominium
 
+```
+DELETE FROM olx_crawl
+WHERE olx_crawl.iptu IS NULL 
+```
+```
+DELETE FROM olx_crawl
+WHERE olx_crawl.bathrooms  IS NULL 
+```
+```
+DELETE FROM olx_crawl
+WHERE olx_crawl.size IS NULL 
+```
+```
+DELETE FROM olx_crawl
+WHERE olx_crawl.bedrooms  IS NULL 
+```
+```
+DELETE FROM olx_crawl
+WHERE olx_crawl.garage  IS NULL 
+```
+```
+DELETE FROM olx_crawl
+WHERE olx_crawl.condominium  IS NULL 
+```
 ## Parte 3 EDA(Exploratory Data Analysis):
 EM BREVE
