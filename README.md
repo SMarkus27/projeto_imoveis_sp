@@ -37,3 +37,30 @@ Abaixo teremos os comandos SQL realizados para o tratamento dos dados, poderia t
 DELETE FROM olx_crawl
 WHERE olx_crawl.category not in ('Apartamentos', 'Casas')
 ```
+* Vamos remover o R$ das colunas IPTU e Condominium:
+```
+UPDATE olx_crawl
+SET IPTU = REPLACE(IPTU,"R$",'')
+```
+```
+UPDATE olx_crawl
+SET condominium = REPLACE(condominium,"R$",'')
+```
+* Vamos remover o m² da coluna size:
+```
+UPDATE olx_crawl
+SET size = REPLACE(size,"m²",'')
+```
+* Agora vamos remover as palavras ou mais das colunas bathrooms, bedrooms e garage
+```
+UPDATE olx_crawl
+SET bathrooms = REPLACE(bathrooms,"ou mais",'')
+```
+```
+UPDATE olx_crawl
+SET bedrooms = REPLACE(bedrooms,"ou mais",'')
+```
+```
+UPDATE olx_crawl
+SET garage = REPLACE(garage,"ou mais",'')
+```
