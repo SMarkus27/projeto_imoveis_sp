@@ -66,4 +66,11 @@ SET garage = REPLACE(garage,"ou mais",'')
 ```
 
 ## Parte 3 EDA(Exploratory Data Analysis):
-EM BREVE
+Foi feita uma pequena exploração dos dados e também a construção de alguns gráficos que podem ser observados no jupyter:<br>
+<br>
+<a href='https://github.com](https://github.com/SMarkus27/Projeto_Imoveis_SP/blob/main/EDA_imoveis.ipynb'>Jupyter</a><br>
+
+## Parte 4 Dashboard:
+Foi construído um pequeno dashboard com o google data studio com os dados obtidos no webscrapping.<br>
+<br>
+<a href='https://datastudio.google.com/reporting/d366753f-6c29-4efe-a149-454fadd77f17/page/48ftC?s=sZLvnKC2mqI'>Dashboard</a>
