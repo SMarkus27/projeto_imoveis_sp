@@ -26,26 +26,23 @@ class CourseraSpider(scrapy.Spider):
 
     def parse_details(self,response):
         category = response.xpath('//dt[contains(text(),"Categoria")]/following-sibling::a/text()').extract_first()
-        iptu = response.xpath('//dt[contains(text(), "IPTU")]/following-sibling::dd/text()').extract_first()
         bathrooms = response.xpath('//dt[contains(text(), "Banheiros")]/following-sibling::dd/text()').extract_first()
         type_house = response.xpath('//dt[contains(text(), "Tipo")]/following-sibling::a/text()').extract_first()
         size = response.xpath('//dt[contains(text(), "Área útil")]/following-sibling::dd/text()').extract_first()
         bedrooms = response.xpath('//dt[contains(text(), "Quartos")]/following-sibling::a/text()').extract_first()
         garage = response.xpath('//dt[contains(text(), "Vagas na garagem")]/following-sibling::dd/text()').extract_first()
-        condominium = response.xpath('//dt[contains(text(), "Condomínio")]/following-sibling::dd/text()').extract_first()
         district = response.xpath('//dt[contains(text(),"Bairro")]/following-sibling::dd/text()').extract_first()
         city = response.xpath('//dt[contains(text(),"Município")]/following-sibling::dd/text()').extract_first()
-
+        price = response.xpath('//h2[contains(@class, "sc-ifAKCX eQLrcK")]/text()').extract_first()
         yield{
             'category': category,
-            'iptu': iptu,
             'bathrooms': bathrooms,
             'type_house': type_house,
             'size': size,
             'bedrooms': bedrooms,
             'garage': garage,
-            'condominium': condominium,
             'district': district,
-            'city': city
+            'city': city,
+            'price':price
 
         }

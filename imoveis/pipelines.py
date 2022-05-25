@@ -12,8 +12,8 @@ class OlxPipeline(object):
         self.conn = mysql.connector.connect(
             host='localhost',
             user='user',
-            passwd='password',
-            database='db'
+            passwd='passwd',
+            database='olx_crawl_db'
             )
 
         self.curr = self.conn.cursor()
@@ -22,16 +22,14 @@ class OlxPipeline(object):
         self.curr.execute("""DROP TABLE IF EXISTS olx_crawl""")
         self.curr.execute("""create table olx_crawl(
                         category text,
-                        iptu text,
                         bathrooms text,
                         type_house text,
                         size text,
                         bedrooms text,
                         garage text,
-                        condominium text,
                         district text,
-                        city text
-
+                        city text,
+                        price text
                         )""")
 
     def process_item(self, item, spider):
@@ -40,17 +38,16 @@ class OlxPipeline(object):
 
 
     def store_db(self, item):
-        self.curr.execute(f"""INSERT INTO olx_crawl VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)""",list((
+        self.curr.execute(f"""INSERT INTO olx_crawl VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s)""",list((
             item['category'],
-            item['iptu'],
             item['bathrooms'],
             item['type_house'],
             item['size'],
             item['bedrooms'],
             item['garage'],
-            item['condominium'],
             item['district'],
             item['city'],
+            item['price'],
 
 
                 ))
